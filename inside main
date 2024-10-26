@@ -1,0 +1,804 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Ompzi/Hub/refs/heads/main/Main')))()
+local Window = OrionLib:MakeWindow({Name = "OmpziTools Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OmpziToolsFolder"})
+OrionLib:MakeNotification({
+	Name = "OmpziTools Hub Loaded..",
+	Content = "Enjoy And Dont Get Banned :P",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+local Tab = Window:MakeTab({
+	Name = "Aimbot script",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "PawsThePaw Aimbot",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Neutron.lua/main/MainNeutron.lua"))()
+  	end    
+})
+Tab:AddLabel("PawsThePaw Aimbot is For Mobile/Pc")
+local Tab = Window:MakeTab({
+	Name = "Rivals Silent aim",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Silent Motion",
+	Callback = function()
+      		local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer 
+local camera = workspace.CurrentCamera 
+local mouse = localPlayer:GetMouse() 
+local wtvp = camera.WorldToViewportPoint
+             
+local function getClosestPlayerHead()
+    local target
+    local distance = math.huge 
+    for i, v in ipairs(Players.GetPlayers(Players)) do
+         if v == localPlayer or not v.Character then continue end 
+         local character = v.Character 
+         if character.FindFirstChild(character, "Head") then
+            local head = character.Head 
+            local headPos, onScreen = wtvp(camera, head.Position)
+            
+            if onScreen then 
+                local mouseDist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(headPos.X, headPos.Y)).Magnitude
+                if mouseDist < distance then 
+                    distance = mouseDist 
+                    target = head
+                end 
+            end 
+        end 
+    end
+    return target 
+end 
+local old; old = hookmetamethod(game, "__namecall", function(...)
+    local method = getnamecallmethod()
+    local args = {...}
+    local callingScript = getcallingscript()
+    if (method == "Raycast") and (tostring(callingScript) == "Equipment" or tostring(callingScript) == "FighterController" or tostring(callingScript) == "PlayerDataController" or tostring(callingScript) == "ControlsController") then 
+        args[2] = camera.CFrame.Position
+        args[3] = (getClosestPlayerHead().Position - args[2]).Unit * 1000
+    end
+    return old(unpack(args))
+end)
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Admin Scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Fates Admin",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
+  	end    
+})
+Tab:AddButton({
+	Name = "Nameless Admin",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Inf yield",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Ninja Legends",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Ninja Legends Script",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Zepsyy2/asd/main/Ninja%20Legends.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Proxima Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "horizon.cc",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Shadetamic/horizon/main/loadstring.lua"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Doors",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "BlackKing x bobhub",
+	Callback = function()
+      		--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing-obf/main/Doors%20Blackking%20And%20BobHub"))()
+  	end    
+})
+Tab:AddLabel("BlackKing Is The Only Good Script")
+local Tab = Window:MakeTab({
+	Name = "War Tycoon",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "auth hub",
+	Callback = function()
+      		loadstring(Game:HttpGet("https://raw.githubusercontent.com/unauth0rised/Roblox-Scripts/main/Auth%20Hub.lua"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Arsenal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Leg hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/G6Ubkkuv"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "QuotasHub Simple",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Insertl/QuotasHub/main/BETAv1.3"))()
+  	end    
+})
+Tab:AddLabel("When You Execute leg hub motionless hub is gonna disappear")
+local Tab = Window:MakeTab({
+	Name = "Bedwars",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Voidware X Vape V4",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/VapeVoidware/vapevoidware/main/NewMainScript.lua", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "VapeV4",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "HazelWare",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Hazel-roblox/Hazel-Ware/main/Loader.lua", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Liquid Bounce",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Springs67/LeaksNStuff/3kdIKfmsdSf/LiquidBounce.lua", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "AlSploit",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/AlSploit/AlSploit/main/AlSploit/Bedwars/Loader.lua",true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "RavenB4",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Near-B4/Raven-B4-For-Roblox/main/Raven%20B4%20Loader"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Skid Ware",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/sstvskids/SkidVapeForRoblox/main/NewMainScript.lua", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Icecatv3",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Baconontop/BedwarsV3/main/icecatBedwars.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "icecat v2",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://github.com/Baconontop/bedwarsV2/raw/main/IcecatBedwars'),true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Flame X V2",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FlamingDrey/Flame-X-v2/main/Flame%20X%20Bedwars%20V2"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Slap Battles",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Reaper-Hub",
+	Callback = function()
+      		loadstring((http.request{Url="https://reaperscripts.com/loader?l=1"}).Body,"0zek8y2bld7.qowl6c7o~1")();
+  	end    
+})
+Tab:AddButton({
+	Name = "SB Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Giangplay/Slap_Battles/main/Slap_Battles.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "SB Hub That exists ",
+	Callback = function()
+      		loadstring(game:HttpGet(("https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Slap%20Battles")))()
+  	end    
+})
+Tab:AddButton({
+	Name = "1fOyt",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/1f0yt/community/main/anakinn"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "DestroyerX",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Aquoupi/DestroyerX/main/DestroyerX"))()
+  	end    
+})
+Tab:AddLabel("Reaper-Hub Only For pc")
+local Tab = Window:MakeTab({
+	Name = "Pet sim 99",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "LenutHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/lenutjr/lenut/main/scripts"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "AhmadV99",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/PS99.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "RedzHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/PetSimulator99/main/redz9999.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "ZapHub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://zaphub.xyz/Exec'))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Murderer and sheriff Duels",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Tbaohub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHubMurdervssheriff"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "rubyHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Deni210/murdersvssherrifsduels/main/rubyhub", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "MVSH hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://pastebin.com/raw/qBQE4hN0"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "PitbullHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/SoyAdriYT/PitbullHub/main/Scripting", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Nigg hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://shz.al/~wetvwat"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Legends of speed",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Itzperson.ru Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/od1ri/Legends-Of-Speed/main/loadstring.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "EZ Hub",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/debug42O/Ez-Industries-Launcher-Data/master/Launcher.lua'),true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Tbaohub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaoHublegendsofspeed"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "LosHub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/StupidProAArsenal/main/main/Legenos%20of%20speedos'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "RelzHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/farghii/relzhub/main/execute.hack", true))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Prison Life",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "TbaoHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/thaibao/main/TbaohubPrisonLife"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "PrizzLife",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Fe gui",
+	Callback = function()
+     loadstring("\108\111\97\100\115\116\114\105\110\103\40\103\97\109\101\58\72\116\116\112\71\101\116\40\34\104\116\116\112\115\58\47\47\114\97\119\46\103\105\116\104\117\98\117\115\101\114\99\111\110\116\101\110\116\46\99\111\109\47\103\48\48\108\88\112\108\111\105\116\101\114\47\103\48\48\108\88\112\108\111\105\116\101\114\47\109\97\105\110\47\70\101\37\50\48\98\121\112\97\115\115\34\44\32\116\114\117\101\41\41\40\41\10")()
+  	end    
+})
+Tab:AddButton({
+	Name = "Tiger Admin",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/dalloc2/Roblox/main/TigerAdmin.lua"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Universal",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Sirius",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Community/Roblox-Exploit/main/Sirius"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "UnnamedEsp",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/ic3w0lf22/Unnamed-ESP/master/UnnamedESP.lua'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Fps And Ping Counter",
+	Callback = function()
+      		repeat wait() until game:IsLoaded()
+wait(2)
+
+local ScreenGui = Instance.new("ScreenGui")
+local Fps = Instance.new("TextLabel")
+local Ping = Instance.new("TextLabel")
+local UICornerFps = Instance.new("UICorner")
+local UICornerPing = Instance.new("UICorner")
+local UIGradientFps = Instance.new("UIGradient")
+local UIGradientPing = Instance.new("UIGradient")
+local DropShadowFps = Instance.new("ImageLabel")
+local DropShadowPing = Instance.new("ImageLabel")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+DropShadowFps.Name = "DropShadowFps"
+DropShadowFps.Parent = ScreenGui
+DropShadowFps.BackgroundTransparency = 1.000
+DropShadowFps.Position = UDim2.new(0.786, 0, 0, 0)
+DropShadowFps.Size = UDim2.new(0, 140, 0, 30)
+DropShadowFps.Image = "rbxassetid://1316045217"
+DropShadowFps.ImageColor3 = Color3.fromRGB(0, 0, 0)
+DropShadowFps.ImageTransparency = 0.6
+DropShadowFps.ScaleType = Enum.ScaleType.Slice
+DropShadowFps.SliceCenter = Rect.new(10, 10, 118, 118)
+
+Fps.Name = "Fps"
+Fps.Parent = ScreenGui
+Fps.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Fps.BackgroundTransparency = 0.500
+Fps.Position = UDim2.new(0.786138654, 0, 0, 0)
+Fps.Size = UDim2.new(0, 130, 0, 25)
+Fps.Font = Enum.Font.GothamBold
+Fps.TextColor3 = Color3.fromRGB(255, 255, 255)
+Fps.TextScaled = true
+Fps.TextSize = 14.000
+Fps.TextWrapped = true
+
+UICornerFps.Parent = Fps
+UICornerFps.CornerRadius = UDim.new(0, 12)
+
+UIGradientFps.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 200, 255)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 255, 150))
+}
+UIGradientFps.Rotation = 90
+UIGradientFps.Parent = Fps
+
+DropShadowPing.Name = "DropShadowPing"
+DropShadowPing.Parent = ScreenGui
+DropShadowPing.BackgroundTransparency = 1.000
+DropShadowPing.Position = UDim2.new(0.7, 0, 0, 0)
+DropShadowPing.Size = UDim2.new(0, 140, 0, 30)
+DropShadowPing.Image = "rbxassetid://1316045217"
+DropShadowPing.ImageColor3 = Color3.fromRGB(0, 0, 0)
+DropShadowPing.ImageTransparency = 0.6
+DropShadowPing.ScaleType = Enum.ScaleType.Slice
+DropShadowPing.SliceCenter = Rect.new(10, 10, 118, 118)
+
+Ping.Name = "Ping"
+Ping.Parent = ScreenGui
+Ping.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Ping.BackgroundTransparency = 0.500
+Ping.Position = UDim2.new(0.700000048, 0, 0, 0)
+Ping.Size = UDim2.new(0, 130, 0, 25)
+Ping.Font = Enum.Font.GothamBold
+Ping.TextColor3 = Color3.fromRGB(255, 255, 255)
+Ping.TextScaled = true
+Ping.TextSize = 14.000
+Ping.TextWrapped = true
+
+UICornerPing.Parent = Ping
+UICornerPing.CornerRadius = UDim.new(0, 12)
+
+UIGradientPing.Color = ColorSequence.new{
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 150, 150)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 220, 0))
+}
+UIGradientPing.Rotation = 90
+UIGradientPing.Parent = Ping
+
+local fpsScript = Instance.new('LocalScript', Fps)
+local RunService = game:GetService("RunService")
+RunService.RenderStepped:Connect(function(frame)
+    fpsScript.Parent.Text = ("FPS: " .. math.round(1/frame))
+end)
+
+local pingScript = Instance.new('LocalScript', Ping)
+local Stats = game:GetService("Stats")
+RunService.RenderStepped:Connect(function()
+    pingScript.Parent.Text = ("Ping: " .. Stats.Network.ServerStatsItem["Data Ping"]:GetValueString())
+end)
+  	end    
+})
+Tab:AddButton({
+	Name = "ChatBypasser",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/vqmpjayZ/Bypass/main/vadrifts"))()
+  	end    
+})
+Tab:AddLabel("Key for Chatbypasser: therealdeal")
+Tab:AddButton({
+	Name = "Outline Esp",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/1dontgiveaf/NSExpression/main/Outline%20ESP", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Fe Fling",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/Fling%20GUI"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Piano V8",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/JxcExploit/Sad/main/NoKey"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "GhostHub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://raw.githubusercontent.com/GhostPlayer352/Test4/main/GhostHub'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Sky Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/SkyHub.txt"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "BloxFruit",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "RedzHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/redz9999"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Hoho Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/acsu123/HOHO_H/main/Loading_UI"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "ShinyHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/RobloxProjectX/Keyless-Blox-Fruits-Script/main/Shiny%20Hub.txt"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Auto Bounty W-Azure",
+	Callback = function()
+      		getgenv().SpamSkill = false
+getgenv().AutoUseRaceV3 = true
+getgenv().AutoUseRacev4 = true
+getgenv().SpamSkillOnRaceV4 = true
+getgenv().Invisible = true
+getgenv().InCombatNoReset = false
+getgenv().Team = "Pirates" -- Marines
+getgenv().TweenSpeed = 300 -- 350 max or Get Tp Back
+ getgenv().Setting = { -- Select Weapon, Self Explain
+        ["Melee"] = {["Enable"] = true,["Delay"] = 3,
+          ["Skills"] = {
+            ["Z"] = {["Enable"] = true,["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
+            [ "X"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+            ["C"] = {["Enable"] = true,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+            },
+        },
+        ["Blox Fruit"] = {["Enable"] = true, ["Delay"] = 4,
+            ["Skills"] = {
+                ["Z"] = {["Enable"] = true, ["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+                ["X"] = { ["Enable"] = true, ["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+                ["C"] = { ["Enable"] = true, ["HoldTime"] = 0,["TimeToNextSkill"] = 0, },
+                ["V"] = { ["Enable"] = true, ["HoldTime"] = 0,["TimeToNextSkill"] = 0,},
+                ["F"] = {["Enable"] = false,["HoldTime"] = 0, ["TimeToNextSkill"] = 0,},
+            },
+        },
+        ["Sword"] = { ["Enable"] = true, ["Delay"] = 2,
+            ["Skills"] = {
+                ["Z"] = {["Enable"] = true,  ["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
+                ["X"] = {["Enable"] = true, ["HoldTime"] = 0.5, ["TimeToNextSkill"] = 0,},
+            },
+        },
+        ["Gun"] = {["Enable"] = true, ["Delay"] = 2,
+            ["Skills"] = {
+                ["Z"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,},
+                ["X"] = {["Enable"] = true,["HoldTime"] = 0.5,["TimeToNextSkill"] = 0,
+                },
+            },
+        }
+    }
+ loadstring(game:HttpGet('https://raw.githubusercontent.com/vinhuchi/temp-repos/main/FreeAutoBounty.lua'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "RelzHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/farghii/relzhub/main/execute.hack", true))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Solix Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/debunked69/Solix-Blox-Fruits/main/Protected_9116683145502467.txt"))();
+  	end    
+})
+Tab:AddButton({
+	Name = "BlackTrap",
+	Callback = function()
+      		loadstring(game:HttpGetAsync("https://lua-library.btteam.net/script-auth.txt"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "ChestFarm By Tbao",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/QP-Community/Roblox/main/ChestFarmByTbao"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "VectorHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/AAwful/VectorHub/main/Loader.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "MinGaming Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Basicallyybeta/mingane/main/MinGamingNew.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Speed X Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Blox%20Fruit.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Sea Gate Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiSupremacy/Loader.xyz/main/NextGen"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "LunarXHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/NguyenLam2504/LunarXHubNextGeneration/main/GameShit.lua"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "LocalPlayer Test",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddTextbox({
+	Name = "Walkspeed",
+	Default = "Speed",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end	  
+})
+Tab:AddTextbox({
+	Name = "JumpPower",
+	Default = "Jump",
+	TextDisappear = true,
+	Callback = function(Value)
+		game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
+	end	  
+})
+Tab:AddButton({
+	Name = "Noclip",
+	Callback = function()
+      		local Noclip = nil
+local Clip = nil
+
+function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
+  	end    
+})
+Tab:AddLabel("Dont use JumpPower it doesn't work somehow but it does work perfectly")
+local Tab = Window:MakeTab({
+	Name = "SCRIPTHUBV3 Op",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "SCRIPTHUBV3",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/scripthubekitten/SCRIPTHUBV3/main/SCRIPTHUBV3", true))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "pet sim 99",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Phantom hub (rng event)",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/rbxpoliticai/Phantom/main/PS99.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "lenut hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/lenutjr/lenut/main/scripts"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "speed x hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/PS99.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "RedzHub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/PetSimulator99/main/redz9999.lua"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "zap hub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://zaphub.xyz/Exec'))()
+  	end
+})
+local Tab = Window:MakeTab({
+	Name = "zombie attack",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Ghost hub",
+	Callback = function()
+      		loadstring(game:HttpGet('https://ghost-storage.7m.pl/scripts/ghosthublauncher.lua'))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Voidz Hub",
+	Callback = function()
+      		loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/Games.lua'),true))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "tycoon rng",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Wing Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Vernyfx/LDR/main/LDR"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "rinns hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/SkibidiCen/MainMenu/main/Code"))()
+  	end    
+})
+Tab:AddButton({
+	Name = "Jip Hub",
+	Callback = function()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/jjp2iky/scripts/main/TycoonRNG"))()
+  	end    
+})
+local Tab = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddParagraph("Credits","Ompzi On Discord")
+OrionLib:Init()
