@@ -1711,9 +1711,9 @@ function OrionLib:MakeWindow(WindowConfig)
 	end  
 	
 	OrionLib:MakeNotification({
-		Name = "Dont Get Banned",
-		Content = "",
-		Time = 2
+		Name = "Hub Injected",
+		Content = "Dont Get Banned :P",
+		Time = 3
 	})
 	
 
