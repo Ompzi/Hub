@@ -1,11 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Ompzi/Hub/refs/heads/main/Main')))()
 local Window = OrionLib:MakeWindow({Name = "OmpziTools Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OmpziToolsFolder"})
-OrionLib:MakeNotification({
-	Name = "OmpziTools Hub Loaded..",
-	Content = "Enjoy And Dont Get Banned :P",
-	Image = "rbxassetid://4483345998",
-	Time = 5
-})
 local Tab = Window:MakeTab({
 	Name = "Aimbot script",
 	Icon = "rbxassetid://4483345998",
