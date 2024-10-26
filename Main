@@ -1713,7 +1713,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	OrionLib:MakeNotification({
 		Name = "Dont Get Banned",
 		Content = "",
-		Time = 1
+		Time = 2
 	})
 	
 
