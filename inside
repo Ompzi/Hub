@@ -1,4 +1,4 @@
-
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Ompzi/Hub/refs/heads/main/Main')))()
 local Window = OrionLib:MakeWindow({Name = "OmpziTools Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OmpziToolsFolder"})
 local Tab = Window:MakeTab({
 	Name = "Title Here",
