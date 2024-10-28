@@ -1,4 +1,4 @@
-local = loadstring(game:HttpGet("https://raw.githubusercontent.com/Ompzi/Hub/refs/heads/main/inside"))()
+
 
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
