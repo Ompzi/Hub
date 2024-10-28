@@ -1,85 +1,34 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Ompzi/Hub/refs/heads/main/Main')))()
 local Window = OrionLib:MakeWindow({Name = "OmpziTools Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "OmpziToolsFolder"})
 local Tab = Window:MakeTab({
-	Name = "Aimbot script",
+	Name = "Title Here",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 Tab:AddButton({
-	Name = "PawsThePaw Aimbot",
+	Name = "Name Here",
 	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/PawsThePaw/Neutron.lua/main/MainNeutron.lua"))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ompzi/OmpziTools/refs/heads/main/ESP"))()
   	end    
 })
-Tab:AddLabel("PawsThePaw Aimbot is For Mobile/Pc")
-local Tab = Window:MakeTab({
-	Name = "Rivals Silent aim",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-Tab:AddButton({
-	Name = "Silent Motion",
-	Callback = function()
-      		local Players = game:GetService("Players")
-local localPlayer = Players.LocalPlayer 
-local camera = workspace.CurrentCamera 
-local mouse = localPlayer:GetMouse() 
-local wtvp = camera.WorldToViewportPoint
-             
-local function getClosestPlayerHead()
-    local target
-    local distance = math.huge 
-    for i, v in ipairs(Players.GetPlayers(Players)) do
-         if v == localPlayer or not v.Character then continue end 
-         local character = v.Character 
-         if character.FindFirstChild(character, "Head") then
-            local head = character.Head 
-            local headPos, onScreen = wtvp(camera, head.Position)
-            
-            if onScreen then 
-                local mouseDist = (Vector2.new(mouse.X, mouse.Y) - Vector2.new(headPos.X, headPos.Y)).Magnitude
-                if mouseDist < distance then 
-                    distance = mouseDist 
-                    target = head
-                end 
-            end 
-        end 
-    end
-    return target 
-end 
-local old; old = hookmetamethod(game, "__namecall", function(...)
-    local method = getnamecallmethod()
-    local args = {...}
-    local callingScript = getcallingscript()
-    if (method == "Raycast") and (tostring(callingScript) == "Equipment" or tostring(callingScript) == "FighterController" or tostring(callingScript) == "PlayerDataController" or tostring(callingScript) == "ControlsController") then 
-        args[2] = camera.CFrame.Position
-        args[3] = (getClosestPlayerHead().Position - args[2]).Unit * 1000
-    end
-    return old(unpack(args))
-end)
-  	end    
-})
+Tab:AddLabel("Label Here")
+     
 local Tab = Window:MakeTab({
 	Name = "Admin Scripts",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab:AddButton({
-	Name = "Fates Admin",
-	Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/fatesc/fates-admin/main/main.lua"))();
-  	end    
-})
+
 Tab:AddButton({
 	Name = "Nameless Admin",
 	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ompzi/OmpziTools/refs/heads/main/namelessadmin"))()
   	end    
 })
 Tab:AddButton({
 	Name = "Inf yield",
 	Callback = function()
-      		loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+      		loadstring(game:HttpGet("https://raw.githubusercontent.com/Ompzi/OmpziTools/refs/heads/main/InfYield"))()
   	end    
 })
 local Tab = Window:MakeTab({
